@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const users = require("./routes/users");
 const auth = require("./routes/auth");
 const admin = require("./routes/admin");
+const links = require("./routes/links");
 const express = require("express");
 const app = express();
 const { check } = require("./middleware/autentication");
@@ -20,11 +21,12 @@ mongoose
   .set("useCreateIndex", true)
   .connect("mongodb://localhost/mongo-games")
   .then(() => console.log("Now connected to MongoDB!"))
-  .catch(err => console.error("Something went wrong", err));
+  .catch((err) => console.error("Something went wrong", err));
 
 app.use(express.json());
 app.use("/api/users", users);
 app.use("/api/auth", auth);
+app.use("/api/links", links);
 
 // Protect all routes following with authentication
 app.use(check);

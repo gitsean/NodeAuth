@@ -6,8 +6,8 @@ mongod --dbpath ./data/users --port 27017
 
 TODOS:
 
-1. Create url to add items (authed)
-2. Create url to view items (all)
+1. Create url to add items (authed) - DONE.
+2. Create url to view items (all) - DONE.
 3. Create url to delete own entries
 
 4. Go back to the front end and finish it out

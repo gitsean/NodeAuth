@@ -3,7 +3,9 @@ const router = express.Router();
 const Joi = require("joi");
 
 router.get("/", async (req, res) => {
-  console.log("req.headers", req.headers);
+  console.log("req.body", req.body);
+
+  console.log("req.user", req.user);
 
   const { error } = validate(req.headers);
   if (error) {

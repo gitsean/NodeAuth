@@ -25,11 +25,11 @@ router.post("/", async (req, res) => {
     return res.status(400).send("Incorrect email or password.");
   }
 
-  const token = sign(_id);
+  const token = sign(user._id);
   res
     .header("x-auth-token", token)
     .send({ _id: user._id, name: user.name, email: user.email });
-  res.send(token);
+  // res.send(token);
 });
 
 function validate(req) {
